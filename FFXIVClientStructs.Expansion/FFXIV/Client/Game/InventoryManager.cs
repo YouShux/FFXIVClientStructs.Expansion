@@ -14,11 +14,11 @@ public unsafe partial struct InventoryManager
     [MemberFunction("48 85 D2 0F 84 ?? ?? ?? ?? 56 57 48 81 EC")]
     public partial void StoreInteriorFurniture(InventoryItem* item);
 
-    /// <summary>将指定背包庭具存入指定住宅的室外仓库，由客户端检查仓库剩余栏位并发送存入请求。</summary>
-    /// <param name="houseID">目标住宅的完整标识。</param>
+    /// <summary>将指定背包庭具存入指定地块的室外仓库，由客户端检查仓库剩余栏位并发送存入请求。</summary>
+    /// <param name="plotIndex">住宅地块索引，从零开始。</param>
     /// <param name="item">需要存入仓库的背包庭具。</param>
     [MemberFunction("4D 85 C0 0F 84 ?? ?? ?? ?? 55 56 57 48 81 EC ?? ?? ?? ?? 48 8B 05 ?? ?? ?? ?? 48 33 C4 48 89 84 24 ?? ?? ?? ?? 49 8B 00 48 8B F1")]
-    public partial void StoreExteriorFurniture(ulong houseID, InventoryItem* item);
+    public partial void StoreExteriorFurniture(uint plotIndex, InventoryItem* item);
 
     /// <summary>将背包物品关联到临时栏位，并按需发送物品占用请求。</summary>
     /// <param name="item">需要占用的背包物品。</param>
